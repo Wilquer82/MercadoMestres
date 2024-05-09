@@ -1,0 +1,6 @@
+[general]
+preload-engines=['xkb:br::por']
+[general/hotkey]
+triggers=@as []
+[panel]
+show-icon-on-systray=false

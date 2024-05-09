@@ -1,0 +1,106 @@
+.navbar{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    background-color: #1451b4;
+    padding: .5rem;
+    color: #f9ca3c;
+    font-weight: bolder;
+    position: absolute; 
+    z-index: 50;
+}
+
+
+.item{
+    border-bottom: 1px solid transparent;
+    border-bottom-style:inset;
+    transition: .5s;
+    display: flex;
+    cursor:pointer;
+    margin: 0 0;
+    padding: 0 0;
+}
+
+.item:hover{
+    border-bottom: 1px solid #f9ca3c ;
+}
+
+.subMenu{
+    background-color: white;
+    border-radius: .5rem;
+    display: flex;
+    flex-direction: column;
+    height: 11rem;
+    justify-content: space-around;
+    margin: 0 0;
+    padding: 1rem 1rem;
+    position: absolute;
+    text-align: left;
+    top: 4rem;
+    box-shadow: 5px 5px 5px grey;
+}
+
+
+.subItem{
+    display: flex;
+    justify-content:space-between;
+}
+
+.subItem:hover{
+    background-color: rgb(241, 241, 241);
+}
+
+.buttonContract{
+    height: 2.5rem;
+    width: 12rem;
+    border-radius: 1rem;
+    border: none;
+    background-color: #f9ca3c;
+    color: red;
+    font-weight: bold;
+}
+
+.buttonContract:hover{
+    background-color: red;
+    color: white;
+}
+
+.buttonNewsP {
+    align-items: center;
+    background-color: #6D0AD7 !important;
+    border-radius: 8px;
+    border: none;
+    display: flex;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    justify-content: center;
+    line-height: 120%;
+    width: 25vw;
+    height: 2rem;
+}
+
+.containerH{
+    display: flex;
+    justify-content: space-between;
+}
+
+.pai {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .filha {
+    display: table-cell;
+    width: 50%;
+    text-align: center;
+  }
+  .filha:nth-child(-n+3) {
+    order: 1;
+  }
+  .filha:nth-child(4) {
+    order: 2;
+  }
+
+  .filha h4{
+    color: red;
+  }
