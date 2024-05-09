@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import logo from '../mercadodemestresmenor.png'
 import { Input, Button, Badge, Dropdown, Space, Modal, Table, Watermark, Drawer, Card } from 'antd';
 import { UserOutlined, ShoppingCartOutlined, DownOutlined, RightOutlined, ThunderboltOutlined } from '@ant-design/icons';
@@ -5,7 +6,6 @@ import './styles.css'
 import { useContext, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Context from '../context/cartContext';
-import { ReactComponent as Pix } from '../pix.svg';
 
 
 const { Search } = Input;
@@ -15,9 +15,7 @@ export default function NavBar() {
 
     const { cartItens, setCartItens } = useContext(Context);
     const [totalCart, setTotalCart] = useState(0);
-    const [stepOne, setStepOne] = useState(true);
-    const [stepTwo, setStepTwo] = useState(false);
-    const [stepThree, setStepThree] = useState(false);
+
 
 
 
@@ -74,7 +72,6 @@ export default function NavBar() {
     ]
 
     const [openModal, setOpenModal] = useState(false);
-    const [openModalCheck, setOpenModalCheck] = useState(false);
 
 
     const rows = categories.reduce((resultArray, item, index) => {
@@ -241,10 +238,10 @@ export default function NavBar() {
                             className="buttonNewsP"
                             // disabled={disabled}
                             style={{ marginLeft: "5rem",marginTop:"4rem",height: "3rem", width: "10rem", color: "white" }}
-                            onClick={() => {
-                                stepOne((old)=>!old);
-                                stepTwo((old)=>!old);
-                            }}
+                            // onClick={() => {
+                            //     stepOne((old)=>!old);
+                            //     stepTwo((old)=>!old);
+                            // }}
                         >
                             Continuar <RightOutlined style={{ color: "#A1F71A" }} />
                         </button>
@@ -253,38 +250,8 @@ export default function NavBar() {
 
                     </Space>
                     </div>
-                    {/* }
-                    {stepTwo &&
-                    } */}
-
                 </Modal>
             </div>
         </Watermark>
     );
 }
-
-                        {/* {cartItens.map((item, index) => (
-                            <div key={index} style={{ width: "100%" }}>
-                                <Card
-                                    hoverable
-                                    style={{
-                                        width: 250,
-                                        backgroundColor:"gray"
-                                    }}
-                                    // cover={<img alt="example" src={item.image} width={200} />}
-                                >   
-                                    <Meta style={{ color: "#1451b4" }} title={item.item.tipo} />
-                                    {item.item.uteis>0 && <h4>Dias uteis: {item.item.uteis}</h4>}
-                                    {item.item.domingos>0 && <h4>Domingos: {item.item.domingos}</h4>}
-                                    {item.item.sabados>0 && <h4>Sabados: {item.item.sabados}</h4>}
-                                    <h4>Proficionais: {item.item.prof}</h4>
-                                    <h4>Obs.: {item.item.observ}</h4>    
-                                    <h3 style={{ color: "#f9ca3c", textShadow: "1px 1px 1px red" }}>{Number(item.item.total).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}</h3>
-                                    <h4>Datas {item.item.datas}</h4>    
-                                    <br />
-                                    <button className="buttonContract" 
-                                        onClick={() => delItem(index)}
-                                    >EXCLUIR?</button>
-                                </Card>
-                            </div>
-                        ))} */}
